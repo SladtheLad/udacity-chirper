@@ -202,19 +202,19 @@ let tweets = {
   },
 }
 
-export function _getUsers () {
+export function _getUsers() {
   return new Promise((res, rej) => {
-    setTimeout(() => res({...users}), 1000)
+    setTimeout(() => res({ ...users }), 1000)
   })
 }
 
-export function _getTweets () {
+export function _getTweets() {
   return new Promise((res, rej) => {
-    setTimeout(() => res({...tweets}), 1000)
+    setTimeout(() => res({ ...tweets }), 1000)
   })
 }
 
-export function _saveLikeToggle ({ id, hasLiked, authedUser }) {
+export function _saveLikeToggle({ id, hasLiked, authedUser }) {
   return new Promise((res, rej) => {
     setTimeout(() => {
       tweets = {
@@ -232,11 +232,11 @@ export function _saveLikeToggle ({ id, hasLiked, authedUser }) {
   })
 }
 
-function generateUID () {
+function generateUID() {
   return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
 }
 
-function formatTweet ({ author, text, replyingTo = null }) {
+function formatTweet({ author, text, replyingTo = null }) {
   return {
     author,
     id: generateUID(),
@@ -248,7 +248,7 @@ function formatTweet ({ author, text, replyingTo = null }) {
   }
 }
 
-export function _saveTweet ({ text, author, replyingTo }) {
+export function _saveTweet({ text, author, replyingTo }) {
   return new Promise((res, rej) => {
     const formattedTweet = formatTweet({
       text,
